@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    html {
+      font-family: sans
+    }
+  }
+
+.menu-item::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: red;
+    transition: width 2s ease;
+}
+.menu-item.menu-item:hover::after{
+    width: 100%;
+}

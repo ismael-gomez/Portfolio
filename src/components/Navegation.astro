@@ -1,0 +1,96 @@
+---
+    import Github from '../../public/img/github.svg'
+---   
+   <header class="w-100% md:w-[calc(100%-500px)] sticky z-10 top-0 mx-auto">
+    <nav class="px-5 backdrop-filter backdrop-blur flex items-center justify-between h-16 w-full after:absolute after:w-full after:h-full mt-5">
+    <div class="h-full flex items-center z-10">
+        <h1 class="text-1xl font-bold" ><a href="/home">Ismael <span class="p-1 bg-span rounded">Alvarez</span></a></h1>
+    </div>
+      <section class="hidden  h-full md:flex items-center z-10">
+        <ul class="flex gap-10 items-center text-sm font-">
+            <li class="font-bold menu-item relative">
+                <a href="/work">Work</a>
+            </li>
+            <li class="font-bold menu-item relative">
+                <a href="/experiences">Experiences</a>
+            </li>
+            <li class="font-bold menu-item relative">
+                <a href="/about">About</a>
+            </li>
+            
+            <div class="flex gap-2 items-center">
+                <div class="bg-white rounded-full">
+                    <img src={Github.src} alt="github" class=" h-5 p-px " />
+                </div>
+            
+                <li class="font-bold menu-item relative flex gap-2 items-center">
+                    <a href="/source">Source</a>
+                </li>
+            </div>
+        </ul>
+      </section>
+      <div class="z-10  relative flex items-center gap-4">
+        <label class="relative block h-5 w-12 hover:cursor-pointer"> 
+            <input class="w-0 h-0 opacity-0" type="checkbox"  id='changeTheme'>
+            <span class="absolute min-w-full h-full  bg-slate-200 rounded-full slide" ></span>
+          </label>
+
+          <div class=" bg-fondo border  border-menu h-full w-10 hover:cursor-pointer flex md:hidden rounded hover:bg-menu hover:border-menuBorde">
+           
+            <img src="/img/menu.svg" class="h-full w-full p-3"/>
+            
+        </div>
+        <ul class="absolute w-60 text-left flex flex-col  top-14 bg-menuModal rounded border border-menu right-0 md:hidden">
+          <li class="w-full h-full hover:bg-menuHover flex "><a class="h-full w-full m-3 relative flex flex-col border border-transparent hover:border-b-white" href="/work">Work</a></li>
+          <li class="w-full h-full hover:bg-menuHover flex "><a class="h-full w-full m-3 relative flex flex-col border border-transparent hover:border-b-white" href="/experience">Experience</a></li>
+          <li class="w-full h-full hover:bg-menuHover flex "><a class="h-full w-full m-3 relative flex flex-col border border-transparent hover:border-b-white" href="/about">About</a></li>
+          <li class="w-full h-full hover:bg-menuHover flex "><a class="h-full w-full m-3 relative flex flex-col border border-transparent hover:border-b-white" href="/source">Source</a></li>
+        </ul>
+
+      </div>
+    </nav>
+  </header>
+
+
+
+
+  <style>
+    .menu-item::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-radius: 0.125rem;
+    background-color: white;
+    transition: width 1s ease;
+    }
+    .menu-item.menu-item:hover::after{
+        width: 100%;
+    }
+
+
+    .slide:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 20px;
+    background-image: url('/img/moon.svg');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    transition: 1s;
+    box-shadow: rgba(0, 0, 0, 0.21) 0px 0px 7px 1px;
+   }
+
+   #changeTheme:checked + .slide:before{
+  
+    transform: translate(28px);
+    /* content: 'off'; */
+    background-image: url('/img/sun.svg');
+    /* height: 100%; */
+    /* width: 20px; */
+   }
+  </style>
